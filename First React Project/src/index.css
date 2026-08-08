@@ -1,0 +1,170 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  height: 100vh;
+  width: 100%;
+}
+ nav{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #181818;
+  padding: 0px 20px;
+  border-bottom:2px solid #d9dadd;
+}
+.right-side{
+ display: flex;
+ align-items: center;
+ gap: 40px;
+   font-size: 14px;
+
+}
+.right-side>button{
+  height: 40px; 
+  padding: 0px 28px;
+  background: #108A00;
+  font-weight: 600;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.right-side>button:hover{
+  background: #14a101;
+}
+.hero-section{
+    color:#1A1A1A;
+  height: auto;
+  padding: 55px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.hero-section>h2{
+  font-size: 40px;
+}
+.hero-section>h3{
+  font-size: 18px;
+    margin-top: 20px;
+
+}
+.hero-section>p{
+  font-size: 16px;
+  color: hsl(220deg 29.41% 20% / 80%);
+}
+i{
+  color: #ff5900;
+}
+.hero-section>button{
+  height: 40px;
+  width: 140px;
+  margin-top: 30px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+    background: #14a101;
+  color: #ffffff;
+  font-weight: 600;
+    cursor: pointer;
+
+}
+.hero-section>button:hover{
+  background: #108A00;
+
+}
+
+.talented{
+  display: flex;
+  padding: 40px 0px;
+  justify-content: space-around;
+}
+.card{
+    width:420px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.profile img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile h2{
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.profile p{
+    color:#666;
+    font-size:18px;
+}
+
+.info{
+    display:flex;
+    gap:20px;
+    margin:22px 0;
+    align-items:center;
+    font-size:18px;
+}
+
+.rating{
+    color:#ff7a00;
+}
+
+.jobs{
+    color:#555;
+}
+
+.description{
+    color:#555;
+    line-height:1.6;
+    font-size:17px;
+}
+
+.skills{
+    margin:20px 0;
+}
+
+.skills span{
+    display:inline-block;
+    background:#eef2f4;
+    padding:8px 14px;
+    border-radius:8px;
+    margin-right:10px;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.card>button{
+    width:100%;
+    background:#14a800;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.card>button:hover{
+    background:#108c00;
+}

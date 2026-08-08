@@ -1,0 +1,225 @@
+*{
+  padding:0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav{
+  height: 60px;
+  background-color: #000813;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  font-weight: 500;
+}
+.logo {
+  font-size: 30px;
+}
+.logo i{
+    color: #6096f3;
+}
+.middle-side{
+  display: flex;
+  align-items: center;
+}
+.middle-side>ul{
+  display: flex;
+  list-style-type: none;
+  gap: 35px;
+}
+ul>li{
+  cursor: pointer;
+  padding: 5px 0px;
+}
+ul>li:hover{
+  border-bottom:2px solid #004ff0;
+  transition: 0.4s;
+}
+.btns{
+  display: flex;
+  gap: 10px;
+}
+button{
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: white;
+  font-weight: 500px;
+  cursor: pointer;
+}
+.login{
+  background: transparent;
+  border: 2px solid #6e6c71;
+}
+.signup{
+  background-color: #004ff0;
+  border: 2px solid #004ff0;
+}
+
+.hero-sec{
+  height: auto;
+  background: #00091c;
+  display: flex;
+  
+}
+.hero-sec>.left-side{
+  width: 60%;
+  padding: 40px 0px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.content{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #d8dde7;
+}
+.content>h2{
+  font-size: 45px;
+  color: #f0f1f2;
+  line-height: 50px;
+}
+.content>h2>span{
+  color:#0e65ef;
+}
+
+.booking-box {
+  width: 530px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Individual field */
+
+.booking-field {
+  flex: 1;
+}
+
+.booking-field label {
+  display: block;
+  margin-bottom: 7px;
+
+  font-size: 10px;
+  font-weight: 600;
+  color: #20252d;
+}
+
+
+/* Input-looking box */
+
+.field-input {
+  height: 42px;
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid #e2e5ea;
+  border-radius: 8px;
+
+  color: #6b7280;
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.field-input i:first-child {
+  color: #1d2939;
+  font-size: 14px;
+}
+
+.dropdown-icon {
+  margin-left: auto;
+  font-size: 10px !important;
+  color: #111827 !important;
+}
+
+
+/* Search button */
+
+.search-btn {
+  height: 42px;
+  padding: 0 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #0969ed;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.search-btn:hover {
+  background: #0058d6;
+}
+
+.search-btn i {
+  font-size: 13px;
+}
+.hero-stats {
+  width: 530px;
+  margin-top: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.stat-icon {
+  color: #006eff;
+  font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-content h3 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-content p {
+  margin: 3px 0 0;
+
+  color: #d1d5db;
+  font-size: 9px;
+  font-weight: 400;
+  white-space: nowrap;
+}
