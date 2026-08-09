@@ -5,6 +5,9 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 nav{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   height: 60px;
   background-color: #000813;
   color: #ffffff;
@@ -14,12 +17,18 @@ nav{
   padding: 0px 40px;
   font-weight: 500;
 }
+body::-webkit-scrollbar{
+  width: 10px;
+}
 .logo {
-  font-size: 30px;
+height: 100%;
+width: 200px;
 }
-.logo i{
-    color: #6096f3;
+.logo>img{
+  height: 100%;
+  width: 100%;
 }
+
 .middle-side{
   display: flex;
   align-items: center;
@@ -62,8 +71,9 @@ button{
 
 .hero-sec{
   height: auto;
-  background: #00091c;
+  background: #030f25;
   display: flex;
+  padding-top: 70px;
   
 }
 .hero-sec>.left-side{
@@ -72,6 +82,13 @@ button{
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+/* .hero-sec>.right-side{
+  width: 40%;
+} */
+.right-side>img{
+  width: 100%;
+  object-fit: cover;
 }
 .content{
   width: 60%;
@@ -223,3 +240,1879 @@ button{
   font-weight: 400;
   white-space: nowrap;
 }
+/* ================= GLOBAL ================= */
+
+.section {
+  padding: 35px 50px;
+  background: #ffffff;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #101828;
+}
+
+.section-header a {
+  color: #006bea;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.section-header a i {
+  margin-left: 5px;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+
+  padding: 15px;
+  height: 190px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #1475ed;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.category-icon {
+  position: absolute;
+
+  top: 12px;
+  left: 14px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #006bea;
+  background: #f0f6ff;
+
+  font-size: 16px;
+}
+
+.category-image {
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-image img {
+  width: 90%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.08);
+}
+
+.category-card h3 {
+  margin: 5px 0 3px;
+
+  font-size: 14px;
+  color: #111827;
+}
+
+.category-card p {
+  margin: 0;
+
+  font-size: 11px;
+  color: #667085;
+}
+
+
+/* ================= FEATURED CAR ================= */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.car-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.discount {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  padding: 5px 9px;
+
+  background: #28a745;
+  color: white;
+
+  border-radius: 5px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  z-index: 2;
+}
+
+.favorite-btn {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #475467;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition: 0.25s ease;
+}
+
+.favorite-btn:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.car-image {
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transition: transform 0.4s ease;
+}
+
+.car-card:hover .car-image img {
+  transform: scale(1.06);
+}
+
+.car-info {
+  padding: 0 14px 14px;
+}
+
+.car-info h3 {
+  margin: 0 0 9px;
+
+  font-size: 15px;
+  color: #101828;
+}
+
+.car-details {
+  display: flex;
+  gap: 10px;
+
+  color: #667085;
+
+  font-size: 10px;
+}
+
+.car-details span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.car-details i {
+  font-size: 11px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  margin: 12px 0;
+}
+
+.price strong {
+  color: #006bea;
+  font-size: 17px;
+}
+
+.price span {
+  color: #667085;
+  font-size: 11px;
+}
+
+.price del {
+  margin-left: 5px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+.book-btn {
+  width: 100%;
+
+  padding: 9px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #0869ed;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.book-btn:hover {
+  background: #0056c9;
+}
+
+
+/* ================= BENEFITS ================= */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.benefit-card {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #1475ed;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.benefit-icon {
+  min-width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #0869ed;
+  color: white;
+
+  font-size: 19px;
+}
+
+.benefit-card h3 {
+  margin: 0 0 4px;
+
+  font-size: 12px;
+}
+
+.benefit-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* ================= DEALS ================= */
+
+.deals-section {
+  position: relative;
+
+  margin: 0 50px;
+
+  min-height: 145px;
+
+  padding: 25px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #071426;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  gap: 70px;
+}
+
+.deal-content {
+  position: relative;
+  z-index: 2;
+
+  width: 260px;
+}
+
+.deal-tag {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  background: #073b75;
+  color: #52a0ff;
+
+  font-size: 9px;
+}
+
+.deal-content h2 {
+  margin: 10px 0 5px;
+
+  font-size: 20px;
+}
+
+.deal-content p {
+  margin: 0 0 12px;
+
+  color: #d0d5dd;
+
+  font-size: 10px;
+}
+
+.deal-btn {
+  padding: 9px 15px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #0869ed;
+  color: white;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.deal-btn:hover {
+  background: #2583ff;
+}
+
+.deal-btn i {
+  margin-left: 6px;
+}
+
+.deal-timer {
+  display: flex;
+  gap: 12px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.timer-box {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #344054;
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.timer-box strong {
+  font-size: 17px;
+}
+
+.timer-box span {
+  margin-top: 3px;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+.deal-car {
+  position: absolute;
+
+  right: 20px;
+  bottom: -10px;
+
+  width: 360px;
+}
+
+.deal-car img {
+  width: 100%;
+
+  object-fit: contain;
+}
+
+
+/* ================= TESTIMONIAL ================= */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testimonial-card {
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.stars {
+  color: #f5a300;
+
+  font-size: 13px;
+
+  margin-bottom: 12px;
+}
+
+.testimonial-card > p {
+  margin: 0 0 18px;
+
+  color: #344054;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.customer {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.customer-avatar {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8f1ff;
+  color: #0869ed;
+}
+.customer-avatar>img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.customer h4 {
+  margin: 0;
+
+  font-size: 11px;
+}
+
+.customer span {
+  color: #667085;
+
+  font-size: 9px;
+}
+
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter {
+  margin: 0 50px 25px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.newsletter-icon {
+  min-width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #0869ed;
+  color: white;
+
+  font-size: 18px;
+}
+
+.newsletter-text {
+  min-width: 270px;
+}
+
+.newsletter-text h2 {
+  margin: 0;
+
+  font-size: 15px;
+}
+
+.newsletter-text p {
+  margin: 3px 0 0;
+
+  color: #667085;
+
+  font-size: 10px;
+}
+
+.newsletter-form {
+  flex: 1;
+
+  display: flex;
+  gap: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+
+  padding: 11px 15px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 7px;
+
+  background: #f2f4f7;
+
+  font-size: 11px;
+}
+
+.newsletter-form button {
+  width: 150px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #0869ed;
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.newsletter-form button:hover {
+  background: #0056c9;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+  padding: 35px 50px 15px;
+
+  background: #061426;
+  color: white;
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns: 1.6fr repeat(5, 1fr);
+
+  gap: 35px;
+}
+
+.footer-brand h2 {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+}
+
+.footer-brand h2 i {
+  color: #0877ff;
+
+  margin-right: 7px;
+}
+
+.footer-brand p {
+  max-width: 230px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.social-icons i {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #10243c;
+
+  color: #d0d5dd;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.social-icons i:hover {
+  background: #0869ed;
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+.footer-column h3 {
+  margin: 0 0 13px;
+
+  font-size: 12px;
+}
+
+.footer-column a {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #98a2b3;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  padding-left: 3px;
+}
+
+.footer-column p {
+  display: flex;
+  gap: 7px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.footer-column p i {
+  color: #0877ff;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  padding-top: 15px;
+
+  border-top: 1px solid #1d3048;
+
+  text-align: center;
+
+  color: #667085;
+
+  font-size: 9px;
+}
+.aceept-img{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.aceept-img>img{
+  height: 35px;
+  width: 60px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.download-logo{
+    display: flex;
+  align-items: center;
+}
+.download-logo>img{
+    height: 55px;
+  width: 120px;
+  cursor: pointer;
+}
+.download-logo>img:nth-child(2){
+  width: 170px;
+  height: 80px;
+}
+
+@media (max-width: 1024px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  nav {
+    padding: 0 25px;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .middle-side > ul {
+    gap: 20px;
+  }
+
+  .btns {
+    gap: 6px;
+  }
+
+  button {
+    padding: 9px 18px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero-sec {
+    padding-top: 60px;
+  }
+
+  .hero-sec > .left-side {
+    width: 60%;
+    padding: 35px 0 25px 45px;
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  .content > h2 {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .booking-box {
+    width: 500px;
+  }
+
+  .hero-stats {
+    width: 500px;
+    gap: 15px;
+  }
+
+
+  /* ---------- GLOBAL SECTIONS ---------- */
+
+  .section {
+    padding: 35px 35px;
+  }
+
+
+  /* ---------- CATEGORY ---------- */
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+
+  /* ---------- FEATURED ---------- */
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+
+  /* ---------- BENEFITS ---------- */
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* ---------- DEALS ---------- */
+
+  .deals-section {
+    margin: 0 35px;
+    gap: 40px;
+  }
+
+  .deal-car {
+    width: 300px;
+    opacity: 0.45;
+  }
+
+
+  /* ---------- TESTIMONIAL ---------- */
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* ---------- NEWSLETTER ---------- */
+
+  .newsletter {
+    margin: 0 35px 25px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding: 35px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  nav {
+    height: 58px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .middle-side {
+    display: none;
+  }
+
+  .btns {
+    gap: 5px;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .signup {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero-sec {
+    padding-top: 58px;
+    flex-direction: column;
+  }
+
+  .hero-sec > .left-side {
+    width: 100%;
+    padding: 40px 30px 25px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .content > h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .booking-box {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .hero-stats {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .right-side {
+    width: 100%;
+  }
+
+  .right-side > img {
+    width: 100%;
+  }
+
+
+  /* ================= HERO ================= */
+
+  .hero-sec {
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-sec > .left-side {
+    width: 58%;
+    padding: 35px 0 25px 25px;
+    gap: 22px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .content > h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .content > p {
+    font-size: 12px;
+    line-height: 19px;
+  }
+
+
+  /* ================= BOOKING BOX ================= */
+
+  .booking-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 10px;
+    gap: 7px;
+  }
+
+  .booking-field {
+    min-width: 0;
+  }
+
+  .field-input {
+    width: 100%;
+    min-width: 0;
+    font-size: 10px;
+    padding: 0 8px;
+  }
+
+  .search-btn {
+    flex-shrink: 0;
+    padding: 0 12px;
+    font-size: 10px;
+  }
+
+
+  /* ================= HERO STATS ================= */
+
+  .hero-stats {
+    width: 100%;
+    max-width: 430px;
+    gap: 10px;
+  }
+
+  .stat-item {
+    min-width: 0;
+    gap: 5px;
+  }
+
+  .stat-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .stat-content h3 {
+    font-size: 13px;
+  }
+
+  .stat-content p {
+    font-size: 7px;
+  }
+
+
+  /* ================= CAR ================= */
+
+  .hero-sec > .right-side {
+    width: 42%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-sec > .right-side > img {
+    width: 125%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ---------- SECTION ---------- */
+
+  .section {
+    padding: 30px;
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+  }
+
+
+  /* ---------- CATEGORY ---------- */
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .category-card {
+    height: 185px;
+  }
+
+
+  /* ---------- FEATURED ---------- */
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .car-image {
+    height: 165px;
+  }
+
+  .car-details {
+    gap: 7px;
+  }
+
+
+  /* ---------- BENEFITS ---------- */
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+
+  /* ---------- DEALS ---------- */
+
+  .deals-section {
+    margin: 0 30px;
+    padding: 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .deal-content {
+    width: 100%;
+  }
+
+  .deal-timer {
+    gap: 10px;
+  }
+
+  .deal-car {
+    width: 280px;
+    right: -20px;
+    opacity: 0.35;
+  }
+
+
+  /* ---------- TESTIMONIAL ---------- */
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+
+  /* ---------- NEWSLETTER ---------- */
+
+  .newsletter {
+    margin: 0 30px 25px;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-text {
+    min-width: 200px;
+  }
+
+  .newsletter-form {
+    width: 100%;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding: 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+
+
+
+@media (max-width: 430px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  nav {
+    padding: 0 15px;
+  }
+
+  .logo {
+    width: 125px;
+  }
+
+  .signup {
+    padding: 7px 11px;
+    font-size: 11px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+
+  .hero-sec > .left-side {
+    padding: 30px 18px 20px;
+    gap: 22px;
+    width: 100%;
+  }
+
+  .content > h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .content {
+    gap: 8px;
+  }
+
+
+  /* ---------- BOOKING ---------- */
+
+  .booking-box {
+    width: 100%;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .booking-field {
+    width: 100%;
+  }
+
+  .field-input {
+    width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+
+  /* ---------- HERO STATS ---------- */
+
+  .hero-stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 10px;
+  }
+
+  .stat-item {
+    gap: 7px;
+  }
+
+  .stat-icon {
+    font-size: 20px;
+  }
+
+  .stat-content h3 {
+    font-size: 14px;
+  }
+
+  .stat-content p {
+    font-size: 8px;
+  }
+  .hero-sec>.right-side{
+    display: none;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  .section {
+    padding: 25px 18px;
+  }
+
+  .section-header h2 {
+    font-size: 18px;
+  }
+
+  .section-header a {
+    font-size: 12px;
+  }
+
+
+  /* ---------- CATEGORY ---------- */
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-card {
+    height: 170px;
+    padding: 10px;
+  }
+
+  .category-icon {
+    width: 26px;
+    height: 26px;
+    top: 9px;
+    left: 9px;
+    font-size: 14px;
+  }
+
+  .category-image {
+    height: 95px;
+  }
+
+  .category-card h3 {
+    font-size: 13px;
+  }
+
+  .category-card p {
+    font-size: 10px;
+  }
+
+
+  /* ---------- FEATURED ---------- */
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .car-image {
+    height: 190px;
+  }
+
+  .car-info {
+    padding: 0 13px 13px;
+  }
+
+  .car-info h3 {
+    font-size: 15px;
+  }
+
+
+  /* ---------- BENEFITS ---------- */
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .benefit-card {
+    padding: 15px;
+  }
+
+
+  /* ---------- DEALS ---------- */
+
+  .deals-section {
+    margin: 0 18px;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .deal-content h2 {
+    font-size: 18px;
+  }
+
+  .deal-timer {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .timer-box {
+    width: 52px;
+    height: 52px;
+  }
+
+  .timer-box strong {
+    font-size: 15px;
+  }
+
+  .deal-car {
+    width: 220px;
+    right: -35px;
+    bottom: 0;
+    opacity: 0.2;
+  }
+
+
+  /* ---------- TESTIMONIAL ---------- */
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    padding: 16px;
+  }
+
+
+  /* ---------- NEWSLETTER ---------- */
+
+  .newsletter {
+    margin: 0 18px 20px;
+    padding: 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-icon {
+    width: 45px;
+  }
+
+  .newsletter-text {
+    min-width: 100%;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    height: 40px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding: 28px 18px 15px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+@media (max-width: 380px) {
+
+  /* ---------- NAV ---------- */
+
+  nav {
+    padding: 0 12px;
+  }
+
+  .logo {
+    width: 115px;
+  }
+
+  .signup {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero-sec > .left-side {
+    padding: 25px 14px 18px;
+  }
+
+  .content > h2 {
+    font-size: 27px;
+    line-height: 33px;
+  }
+
+
+  /* ---------- STATS ---------- */
+
+  .hero-stats {
+    gap: 15px 6px;
+  }
+
+  .stat-icon {
+    font-size: 18px;
+  }
+
+  .stat-content h3 {
+    font-size: 13px;
+  }
+
+
+  /* ---------- SECTION ---------- */
+
+  .section {
+    padding: 22px 14px;
+  }
+
+
+  /* ---------- CATEGORY ---------- */
+
+  .category-grid {
+    gap: 10px;
+  }
+
+  .category-card {
+    height: 160px;
+  }
+
+  .category-image {
+    height: 88px;
+  }
+
+
+  /* ---------- DEALS ---------- */
+
+  .deals-section {
+    margin: 0 14px;
+    padding: 17px;
+  }
+
+  .deal-timer {
+    gap: 6px;
+  }
+
+  .timer-box {
+    width: 48px;
+    height: 50px;
+  }
+
+  .timer-box strong {
+    font-size: 14px;
+  }
+
+  .timer-box span {
+    font-size: 8px;
+  }
+
+
+  /* ---------- NEWSLETTER ---------- */
+
+  .newsletter {
+    margin: 0 14px 18px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding: 25px 14px 12px;
+  }
+}
+
+
+
+
+
+@media (max-width: 320px) {
+
+  /* ---------- NAV ---------- */
+
+  nav {
+    padding: 0 10px;
+  }
+
+  .logo {
+    width: 105px;
+  }
+
+  .signup {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero-sec > .left-side {
+    padding: 22px 10px 15px;
+  }
+
+  .content > h2 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+
+  /* ---------- BOOKING ---------- */
+
+  .booking-box {
+    padding: 10px;
+  }
+
+  .booking-field label {
+    font-size: 9px;
+  }
+
+  .field-input {
+    height: 38px;
+    font-size: 10px;
+  }
+
+  .search-btn {
+    height: 38px;
+    font-size: 10px;
+  }
+
+
+  /* ---------- STATS ---------- */
+
+  .hero-stats {
+    gap: 12px 4px;
+  }
+
+  .stat-item {
+    gap: 5px;
+  }
+
+  .stat-icon {
+    font-size: 16px;
+  }
+
+  .stat-content h3 {
+    font-size: 12px;
+  }
+
+  .stat-content p {
+    font-size: 7px;
+  }
+
+
+  /* ---------- SECTION ---------- */
+
+  .section {
+    padding: 20px 10px;
+  }
+
+  .section-header h2 {
+    font-size: 16px;
+  }
+
+  .section-header a {
+    font-size: 11px;
+  }
+
+
+  /* ---------- CATEGORY ---------- */
+
+  .category-grid {
+    gap: 8px;
+  }
+
+  .category-card {
+    height: 150px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .category-icon {
+    width: 23px;
+    height: 23px;
+    font-size: 12px;
+  }
+
+  .category-image {
+    height: 78px;
+  }
+
+  .category-card h3 {
+    font-size: 11px;
+  }
+
+  .category-card p {
+    font-size: 9px;
+  }
+
+
+  /* ---------- FEATURED ---------- */
+
+  .car-image {
+    height: 165px;
+  }
+
+  .car-details {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .price strong {
+    font-size: 15px;
+  }
+
+
+  /* ---------- BENEFITS ---------- */
+
+  .benefit-card {
+    padding: 12px;
+  }
+
+  .benefit-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+
+  /* ---------- DEALS ---------- */
+
+  .deals-section {
+    margin: 0 10px;
+    padding: 15px;
+  }
+
+  .deal-content h2 {
+    font-size: 16px;
+  }
+
+  .deal-content p {
+    font-size: 9px;
+  }
+
+  .deal-timer {
+    gap: 4px;
+  }
+
+  .timer-box {
+    width: 44px;
+    height: 46px;
+  }
+
+  .timer-box strong {
+    font-size: 13px;
+  }
+
+  .deal-car {
+    width: 180px;
+    right: -45px;
+    opacity: 0.15;
+  }
+
+
+  /* ---------- TESTIMONIAL ---------- */
+
+  .testimonial-card {
+    padding: 13px;
+  }
+
+  .testimonial-card > p {
+    font-size: 11px;
+  }
+
+
+  /* ---------- NEWSLETTER ---------- */
+
+  .newsletter {
+    margin: 0 10px 15px;
+    padding: 12px;
+  }
+
+  .newsletter-text h2 {
+    font-size: 14px;
+  }
+
+  .newsletter-text p {
+    font-size: 9px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding: 22px 10px 12px;
+  }
+
+  .footer-grid {
+    gap: 20px;
+  }
+
+  .footer-brand h2 {
+    font-size: 18px;
+  }
+
+  .footer-brand p {
+    font-size: 9px;
+  }
+
+  .footer-column h3 {
+    font-size: 11px;
+  }
+
+  .footer-column a,
+  .footer-column p {
+    font-size: 9px;
+  }
+
+  .footer-bottom {
+    font-size: 8px;
+  }
+
+  .aceept-img {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .aceept-img > img {
+    width: 52px;
+    height: 30px;
+  }
+
+  .download-logo {
+    flex-wrap: wrap;
+  }
+
+  .download-logo > img {
+    width: 100px;
+    height: 48px;
+  }
+
+  .download-logo > img:nth-child(2) {
+    width: 135px;
+    height: 65px;
+  }
+}
+
+
+
