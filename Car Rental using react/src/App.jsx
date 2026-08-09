@@ -165,14 +165,14 @@ function App() {
     <>
       <nav>
         <div className="left-side">
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
 
         </div>
         <div className="middle-side">
           <ul>
-            <li>Home</li>
+            <li className='active'>Home</li>
             <li>Cars</li>
             <li>Services</li>
             <li>Deals</li>
@@ -197,40 +197,56 @@ function App() {
 
             {/* Pick-up Location */}
             <div className="booking-field">
-              <label>Pick-up Location</label>
+              <label htmlFor="pickup-location">Pick-up Location</label>
 
               <div className="field-input">
-                <i className="bi bi-geo-alt-fill"></i>
-                <span>Select location</span>
-                <i className="bi bi-chevron-down dropdown-icon"></i>
+                {/* <i className="bi bi-geo-alt-fill"></i> */}
+
+                <select id="pickup-location" defaultValue="">
+                  <option value="" disable>
+                    Select location
+                  </option>
+                  <option value="karachi">Karachi</option>
+                  <option value="lahore">Lahore</option>
+                  <option value="islamabad">Islamabad</option>
+                  <option value="rawalpindi">Rawalpindi</option>
+                </select>
+
+                {/* <i className="bi bi-chevron-down dropdown-icon"></i> */}
               </div>
             </div>
 
 
             {/* Pick-up Date */}
             <div className="booking-field">
-              <label>Pick-up Date</label>
+              <label htmlFor="pickup-date">Pick-up Date</label>
 
               <div className="field-input">
-                <i className="bi bi-calendar3"></i>
-                <span>Select date</span>
+
+                <input
+                  id="pickup-date"
+                  type="date"
+                />
               </div>
             </div>
 
 
             {/* Drop-off Date */}
             <div className="booking-field">
-              <label>Drop-off Date</label>
+              <label htmlFor="dropoff-date">Drop-off Date</label>
 
               <div className="field-input">
-                <i className="bi bi-calendar3"></i>
-                <span>Select date</span>
+
+                <input
+                  id="dropoff-date"
+                  type="date"
+                />
               </div>
             </div>
 
 
             {/* Search Button */}
-            <button className="search-btn">
+            <button className="search-btn" type="button">
               <i className="bi bi-search"></i>
               Search Cars
             </button>
@@ -550,10 +566,10 @@ function App() {
               <img src="https://tse1.mm.bing.net/th/id/OIP.g1SNe3QbzwwQs1cTe19JDQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
             </div>
             <h3>Download App</h3>
-             <div className="download-logo">
+            <div className="download-logo">
               <img src="https://www.pngall.com/wp-content/uploads/10/Google-Play-Logo-PNG-Image.png" alt="" />
-              <img  src="https://www.freepnglogos.com/uploads/app-store-logo-png/download-on-the-app-store-logo-png-23.png" alt=""  />
-             </div>
+              <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/download-on-the-app-store-logo-png-23.png" alt="" />
+            </div>
           </div>
         </div>
 

@@ -5,12 +5,10 @@ const Card=({data})=>{
 
      return(<div className="car-card">
 
+            {data.discount?(
             <div className="discount">{data.discount}</div>
-
-            <button className="favorite-btn">
-              <i className="bi bi-heart"></i>
-            </button>
-
+             ):null
+            }
             <div className="car-image">
               <img
                 src={data.image}
