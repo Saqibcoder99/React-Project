@@ -68,7 +68,14 @@ button{
   background-color: #004ff0;
   border: 2px solid #004ff0;
 }
-
+.signup:hover{
+    background-color: #417df5;
+    transition: 0.3s;
+}
+.login:hover{
+  background: #504e4e;
+  transition: 0.3s;
+}
 .hero-sec{
   height: auto;
   background: #030f25;
