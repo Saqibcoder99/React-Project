@@ -308,7 +308,7 @@ function App() {
           </div>
         </div>
         <div className="right-side">
-          <img src={heroImg} alt="car" height={500} />
+          <img src={heroImg} alt="car"  />
         </div>
       </div>
 

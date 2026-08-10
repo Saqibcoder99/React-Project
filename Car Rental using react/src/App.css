@@ -81,25 +81,21 @@ button{
   transition: 0.3s;
 }
 .hero-sec{
-  height: auto;
+  position: relative;
   background: #030f25;
   display: flex;
   padding-top: 70px;
+  padding-bottom: 30px;
   
 }
 .hero-sec>.left-side{
-  width: 60%;
-  padding: 40px 0px 20px 80px;
+  /* width: 60%; */
+  padding: 0px 0px 0px 80px;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-/* .hero-sec>.right-side{
-  width: 40%;
-} */
-.right-side>img{
-  width: 100%;
-  object-fit: cover;
+  z-index: 1;
 }
 .content{
   width: 60%;
@@ -116,8 +112,19 @@ button{
 .content>h2>span{
   color:#0e65ef;
 }
+.hero-sec>.right-side {
+  position: absolute;
 
+  right: 0px;
+  bottom: 0px;
 
+  width: 500px;
+}
+
+.hero-sec>.right-side> img {
+  width: 100%;
+  object-fit: contain;
+}
 /* =========================
    BOOKING BOX
 ========================= */
@@ -1348,6 +1355,7 @@ button{
 
   .right-side {
     width: 100%;
+    opacity: 0.5;
   }
 
   .right-side > img {
@@ -1608,7 +1616,10 @@ button{
   .content {
     gap: 8px;
   }
-
+  .hero-sec>.right-side{
+    width: 100%;
+    opacity: 0.3;
+  }
 
   /* ---------- BOOKING ---------- */
 
@@ -1657,10 +1668,6 @@ button{
   .stat-content p {
     font-size: 8px;
   }
-  .hero-sec>.right-side{
-    display: none;
-  }
-
   /* ---------- SECTIONS ---------- */
 
   .section {
