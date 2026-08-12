@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card=({data})=>{
+const Card=({data,setShowBooking,setSelectedCar})=>{
     
 
      return(<div className="car-card">
@@ -43,7 +43,11 @@ const Card=({data})=>{
                 <del>{data.oldPrice}</del>
               </div>
 
-              <button className="book-btn">
+              <button className="book-btn" onClick={()=>{
+                document.body.style.overflow="hidden"
+                setSelectedCar(data)
+                setShowBooking(true)
+              }}>
                 Book Now
               </button>
 

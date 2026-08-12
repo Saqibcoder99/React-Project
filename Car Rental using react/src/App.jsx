@@ -17,7 +17,7 @@ import Card from './components/category'
 import Featured from './components/featured'
 import ChooseDrive from './components/chooseDriveX'
 import CustomerFeedback from './components/customerReviews'
-
+import BookingCar from './components/bookingCar'
 
 function App() {
   const categories = [
@@ -161,6 +161,8 @@ function App() {
       image: "https://avatars.githubusercontent.com/u/175876289?v=4"
     }
   ];
+  const [showBooking, setShowBooking] = useState(false);
+  const [selectedCar, setSelectedCar]=useState(null)
   return (
     <>
       <nav>
@@ -203,7 +205,7 @@ function App() {
                 {/* <i className="bi bi-geo-alt-fill"></i> */}
 
                 <select id="pickup-location" defaultValue="">
-                  <option value="" disable>
+                  <option >
                     Select location
                   </option>
                   <option value="karachi">Karachi</option>
@@ -343,10 +345,9 @@ function App() {
         <div className="featured-grid">
           {
             featuredCars.map((item) => (
-              <Featured data={item} />
+              <Featured data={item} setShowBooking={setShowBooking} setSelectedCar={setSelectedCar} />
             )
             )}
-
         </div>
       </section>
 
@@ -579,6 +580,9 @@ function App() {
         </div>
 
       </footer>
+ 
+
+     {showBooking? <BookingCar setShowBooking={setShowBooking} SelectedCar={selectedCar}/>:null}
     </>
   )
 }
