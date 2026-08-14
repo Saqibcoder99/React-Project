@@ -1,8 +1,12 @@
 import React from "react";
 
 
-const Card= ({data}) => {    
-    return (<div className="category-card">
+const Card= ({data,setfilteredCars}) => {    
+    return (<div className="category-card"onClick={()=>(
+        
+    setfilteredCars(data.title)
+
+    )}>
   
         <div className="category-icon">
       <i className={`bi ${data.icon}`}></i>

@@ -7,10 +7,6 @@ import categorySedan from './assets/category_sedan.png'
 import categoryElectric from './assets/electric_category.png'
 import categoryLuxury from './assets/luxry_category.png'
 import categoryHatchback from './assets/hatchback_category.png'
-import rangeRover from './assets/range_rover.png'
-import Audi from './assets/audi.png'
-import BMW from './assets/bmw.png'
-import Mercedees from './assets/mercedees.png'
 
 import './App.css'
 import Card from './components/category'
@@ -20,10 +16,230 @@ import CustomerFeedback from './components/customerReviews'
 import BookingCar from './components/bookingCar'
 
 function App() {
+  const cars = [
+    // ==================== SUV ====================
+    {
+      id: 1,
+      name: "Range Rover Evoque",
+      category: "SUV",
+      price: "$89",
+      oldPrice: "$112",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Diesel",
+      image: "range_rover.png",
+    },
+    {
+      id: 2,
+      name: "BMW X5",
+      category: "SUV",
+      price: "$105",
+      oldPrice: "$125",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://imgd-ct.aeplcdn.com/1056x660/n/40f3bbb_1676647.png?q=80",
+    },
+    {
+      id: 3,
+      name: "Mercedes GLC",
+      category: "SUV",
+      price: "$110",
+      oldPrice: "$135",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://tse2.mm.bing.net/th/id/OIP.qkup7LjLufM4kav7oFnK0wHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+    {
+      id: 4,
+      name: "Audi Q7",
+      category: "SUV",
+      price: "$95",
+      oldPrice: "$118",
+      seats: 7,
+      transmission: "Automatic",
+      fuel: "Diesel",
+      image: "audi-Q7.png",
+    },
+    {
+      id: 5,
+      name: "Toyota Land Cruiser",
+      category: "SUV",
+      price: "$125",
+      oldPrice: "$150",
+      seats: 7,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://imgd.aeplcdn.com/1056x594/n/0xan40b_1643911.jpg?q=80&wm=1",
+    },
+
+    // ==================== SEDAN ====================
+    {
+      id: 6,
+      name: "BMW 5 Series",
+      category: "Sedan",
+      price: "$75",
+      oldPrice: "$88",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://ackodrive-prod.ackoassets.com/image/bmw/5-series/phytonic-blue/default/Transparent.png",
+    },
+    {
+      id: 7,
+      name: "Mercedes C-Class",
+      category: "Sedan",
+      price: "$65",
+      oldPrice: "$72",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "mercedees-C.png",
+    },
+    {
+      id: 8,
+      name: "Toyota Camry",
+      category: "Sedan",
+      price: "$58",
+      oldPrice: "$70",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Hybrid",
+      image: "https://di-sitebuilder-assets.dealerinspire.com/Toyota/MLP/Camry/2025/color-Heavy-Metal.png",
+    },
+    {
+      id: 9,
+      name: "Honda Accord",
+      category: "Sedan",
+      price: "$55",
+      oldPrice: "$65",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://th.bing.com/th/id/R.81a1ea4a49ae2996433e3eef19c94635?rik=O4hqJZ6u1ehRGg&pid=ImgRaw&r=0",
+    },
+
+    // ==================== LUXURY ====================
+    {
+      id: 10,
+      name: "BMW 7 Series",
+      category: "Luxury",
+      price: "$150",
+      oldPrice: "$180",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://imgcdn.sayaratbay.com/large/gallery/color/4/2010/bmw-7-series-color-800970.jpg",
+    },
+    {
+      id: 11,
+      name: "Mercedes S-Class",
+      category: "Luxury",
+      price: "$175",
+      oldPrice: "$210",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://www.pngkit.com/png/full/847-8476621_did-you-know-every-new-mercedes-benz-s.png",
+    },
+    {
+      id: 12,
+      name: "Porsche Panamera",
+      category: "Luxury",
+      price: "$165",
+      oldPrice: "$195",
+      seats: 4,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://platform.cstatic-images.com/in/v2/stock_photos/0b482066-0062-4dca-b3bb-5a92f512776c/e8df5937-15ed-4ef7-b26d-552a59cb262a.png",
+    },
+
+    // ==================== HATCHBACK ====================
+    {
+      id: 13,
+      name: "Kia Picanto",
+      category: "Hatchback",
+      price: "$35",
+      oldPrice: "$42",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://www.kia.com/content/dam/kwcms/kme/global/en/assets/vehicles/ja/picanto-my25/discover/kia-picanto-my25-MilkyBeige-1.png",
+    },
+    {
+      id: 14,
+      name: "Volkswagen Golf",
+      category: "Hatchback",
+      price: "$48",
+      oldPrice: "$58",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://images.ctfassets.net/3xid768u5joa/SQTMMWK7C6aozpV9vACuW/892537d66a3dc9c9baf46cc78b3e8ac9/02_VolkswagenGolf_ColourGuide_PureWhitesolid_12.08_MR.webp",
+    },
+    {
+      id: 15,
+      name: "Honda Civic Hatchback",
+      category: "Hatchback",
+      price: "$52",
+      oldPrice: "$62",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Petrol",
+      image: "https://tse2.mm.bing.net/th/id/OIP.vhOy5pd0fCeuGcEDPNZQugHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+
+    // ==================== ELECTRIC ====================
+    {
+      id: 16,
+      name: "Tesla Model 3",
+      category: "Electric",
+      price: "$85",
+      oldPrice: "$100",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Electric",
+      image: "https://tse1.mm.bing.net/th/id/OIP.9ris5k--PtWLnx8g1E6xGwHaFj?r=0&w=640&h=480&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+    {
+      id: 17,
+      name: "Tesla Model Y",
+      category: "Electric",
+      price: "$95",
+      oldPrice: "$115",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Electric",
+      image: "https://tse3.mm.bing.net/th/id/OIP.CoiWqJc7bYtjwsbkEYSIkgHaEK?r=0&w=1920&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+    {
+      id: 18,
+      name: "BMW i4",
+      category: "Electric",
+      price: "$90",
+      oldPrice: "$108",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Electric",
+      image: "https://tse4.mm.bing.net/th/id/OIP.BZSLJmhLOPzI2mpuxN9UpwHaE4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+    {
+      id: 19,
+      name: "Audi e-tron",
+      category: "Electric",
+      price: "$115",
+      oldPrice: "$135",
+      seats: 5,
+      transmission: "Automatic",
+      fuel: "Electric",
+      image: "https://tse1.mm.bing.net/th/id/OIP.ic1PnrHZkVZbTr3RQBAWrAHaDd?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    },
+  ]; 
   const categories = [
     {
       icon: "bi-grid",
-      title: "All Cars",
+      title: "All",
       cars: "120+ Cars",
       image: categoryAllCars,
     },
@@ -62,8 +278,8 @@ function App() {
     {
       id: 1,
       discount: "-20%",
-      image: rangeRover,
-      name: "Range Rover Evoque",
+      image: "range_rover.png",
+      name:"Range Rover",
       transmission: "Automatic",
       seats: "5 Seats",
       fuel: "Diesel",
@@ -75,7 +291,7 @@ function App() {
     {
       id: 2,
       discount: "-15%",
-      image: BMW,
+      image: "https://ackodrive-prod.ackoassets.com/image/bmw/5-series/phytonic-blue/default/Transparent.png",
       name: "BMW 5 Series",
       transmission: "Automatic",
       seats: "5 Seats",
@@ -88,7 +304,7 @@ function App() {
     {
       id: 3,
       discount: null,
-      image: Audi,
+      image: "audi-Q7.png",
       name: "Audi Q7",
       transmission: "Automatic",
       seats: "7 Seats",
@@ -101,7 +317,7 @@ function App() {
     {
       id: 4,
       discount: "-10%",
-      image: Mercedees,
+      image: "mercedees-C.png",
       name: "Mercedes C-Class",
       transmission: "Automatic",
       seats: "5 Seats",
@@ -162,7 +378,12 @@ function App() {
     }
   ];
   const [showBooking, setShowBooking] = useState(false);
-  const [selectedCar, setSelectedCar]=useState(null)
+  const [selectedCar, setSelectedCar] = useState(null)
+  const [filteredCars, setfilteredCars] = useState(null)
+  let value = filteredCars === "All" ? cars :
+    cars.filter((item) => (
+      item.category === filteredCars
+    ))
   return (
     <>
       <nav>
@@ -183,8 +404,8 @@ function App() {
           </ul>
         </div>
         <div className="btns">
-          <button className='login'><i class="bi bi-person"></i>  Log in</button>
-          <button className='signup'><i class="bi bi-person-add"></i>   Sign Up</button>
+          <button className='login'><i className="bi bi-person"></i>  Log in</button>
+          <button className='signup'><i className="bi bi-person-add"></i>   Sign Up</button>
         </div>
 
       </nav>
@@ -310,7 +531,7 @@ function App() {
           </div>
         </div>
         <div className="right-side">
-          <img src={heroImg} alt="car"  />
+          <img src={heroImg} alt="car" />
         </div>
       </div>
 
@@ -324,14 +545,28 @@ function App() {
 
         <div className="category-grid">
           {
-            categories.map((item) => (
-              <Card data={item} />
+            categories.map((item,id) => (
+              <Card key={id} data={item} setfilteredCars={setfilteredCars} />
             )
             )}
         </div>
       </section>
 
+     { filteredCars&&(
+      <section className='section'>
+        <div className="section-header">
+          <h2>Available Cars</h2>
+        </div>
 
+        <div className="featured-grid">
+          { 
+            value.map((item) => (
+              <Featured data={item} setShowBooking={setShowBooking} setSelectedCar={setSelectedCar} />
+            )
+            )}
+        </div>
+      </section>
+      )}
 
       <section className="section">
         <div className="section-header">
@@ -345,7 +580,7 @@ function App() {
         <div className="featured-grid">
           {
             featuredCars.map((item) => (
-              <Featured data={item} setShowBooking={setShowBooking} setSelectedCar={setSelectedCar} />
+              <Featured key={item.id} data={item} setShowBooking={setShowBooking} setSelectedCar={setSelectedCar} />
             )
             )}
         </div>
@@ -361,8 +596,8 @@ function App() {
 
         <div className="benefits-grid">
           {
-            whyChoose.map((item) => (
-              <ChooseDrive data={item} />
+            whyChoose.map((item,id) => (
+              <ChooseDrive key={id} data={item} />
             ))
           }
 
@@ -445,8 +680,8 @@ function App() {
         <div className="testimonial-grid">
 
           {
-            customerReviews.map((item) => (
-              <CustomerFeedback data={item} />
+            customerReviews.map((item,id) => (
+              <CustomerFeedback key={id} data={item} />
             ))
           }
 
@@ -580,9 +815,9 @@ function App() {
         </div>
 
       </footer>
- 
 
-     {showBooking? <BookingCar setShowBooking={setShowBooking} SelectedCar={selectedCar}/>:null}
+
+      {showBooking ? <BookingCar setShowBooking={setShowBooking} SelectedCar={selectedCar} /> : null}
     </>
   )
 }
