@@ -38,9 +38,7 @@ const steps = [
 
 const data=steps[count-1];
   return (
-    
-    <div className='flex justify-center items-center h-[100vh] bg-[#e5e5e7] text-[#68738A] '>
-      <div className="bg-[#FDFDFD] w-[700px]  h-auto flex flex-col  items-center  p-8 rounded-3xl" >
+          <div className="bg-[#FDFDFD] w-[700px]  flex flex-col  items-center  p-8 rounded-3xl  " >
         <h3 className='text-[#17213A] text-4xl font-bold mb-3'>Advice App</h3>
         <p className='font-medium'>Follow these step to master web development</p>
         <div className="flex my-8 items-baseline w-[400px]  text-center">
@@ -84,7 +82,6 @@ const data=steps[count-1];
           flex gap-3.5 font-medium cursor-pointer  hover:text-white hover:bg-[#4A4AD8] hover:translate-x-1 transition duration-300'onClick={()=>{count!=3?setCount(count+1):setCount(1)}}>Next <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
         </div>
       </div>
-    </div>
   )
 }
 
