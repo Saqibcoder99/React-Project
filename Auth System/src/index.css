@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+.info{
+    display:flex;
+    gap:20px;
+    margin:22px 0;
+    align-items:center;
+    font-size:18px;
+}
+
+.rating{
+    color:#ff7a00;
+}
+
+.jobs{
+    color:#555;
+}
+
+.description{
+    color:#555;
+    line-height:1.6;
+    font-size:17px;
+}
+
+.skills{
+    margin:20px 0;
+}
+
+.skills span{
+    display:inline-block;
+    background:#eef2f4;
+    padding:8px 14px;
+    border-radius:8px;
+    margin-right:10px;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.card>button{
+    width:100%;
+    background:#14a800;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.card>button:hover{
+    background:#108c00;
+}
