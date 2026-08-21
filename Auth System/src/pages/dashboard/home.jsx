@@ -10,6 +10,8 @@ const getData = async () => {
     
     
     setUsers(result.users);
+    console.log(result.users);
+    
 }
 useEffect(() => {
     console.log("use effect chalaaa -->");
@@ -31,8 +33,8 @@ useEffect(() => {
       </div>
     </nav>
         <div className="text-[#1A1A1A] h-auto py-14 flex flex-col items-center gap-2.5">
-      <h2 className='text-4xl'>Hire the Best Front-End Developers</h2>
-      <h3 className='text-[18px] mt-5'>Clients rate our Front-End Developers <span><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star-half-stroke text-[#ff5900]"></i></span>      4.8/5</h3>
+      <h2 className='text-4xl font-bold'>Hire the Best Front-End Developers</h2>
+      <h3 className='text-[18px] mt-5 font-semibold'>Clients rate our Front-End Developers <span><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star text-[#ff5900]"></i><i class="fa-solid fa-star-half-stroke text-[#ff5900]"></i></span>      4.8/5</h3>
       <p className='text-[16px] text-[#242e42cc]'>Based on 2,132 client reviews</p>
       <button className='h-10 w-[140px] mt-7 rounded-[20px] bg-[#14a101] text-white font-semibold cursor-pointer'>Hire Freelancers</button>
     </div>
@@ -48,34 +50,34 @@ useEffect(() => {
             </div>
           </div>
     
-          <div class="info">
+          <div className="flex gap-5 my-6 items-center text-[18px]">
             <span><strong>$18/hr</strong></span>
     
-            <span class="rating">
+            <span className="text-[#ff7a00]">
               <i class="fa-solid fa-star"></i> 5.0
             </span>
     
-            <span class="jobs">
-              <i class="fa-solid fa-briefcase"></i> 8 jobs
+            <span className="text-[#555]">
+              <i class="fa-solid fa-briefcase text-[#ff7a00]"></i> 8 jobs
             </span>
           </div>
     
-          <p class="description">
+          <p className="text-[#555] leading-7 text-[17px]" >
             I'm currently Upwork's top web/mobile developer.
             I build responsive and modern websites using
             React and Next.js.
           </p>
     
-          <div class="skills">
-            <span>Front-End Development</span>
-            <span>React</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>Javascript</span>
+          <div className="my-5">
+            <span className='inline-block bg-[#eef2f4] p-3 rounded-[8px] mr-2.5 mb-2.5 text-[15px]'>Front-End Development</span>
+            <span className='inline-block bg-[#eef2f4] p-3 rounded-[8px] mr-2.5 mb-2.5 text-[15px]'>React</span>
+            <span className='inline-block bg-[#eef2f4] p-3 rounded-[8px] mr-2.5 mb-2.5 text-[15px]'>HTML</span>
+            <span className='inline-block bg-[#eef2f4] p-3 rounded-[8px] mr-2.5 mb-2.5 text-[15px]'>CSS</span>
+            <span className='inline-block bg-[#eef2f4] p-3 rounded-[8px] mr-2.5 mb-2.5 text-[15px]'>Javascript</span>
     
           </div>
     
-          <button>See profile</button>
+          <button className='w-full bg-[#14a800] text-white p-4 rounded-4xl text-[18px] font-bold cursor-pointer hover:bg-[#108c00]'>See profile</button>
     
         </div>))}
   
