@@ -38,10 +38,10 @@ const steps = [
 
 const data=steps[count-1];
   return (
-          <div className="bg-[#FDFDFD] w-[700px]  flex flex-col  items-center  p-8 rounded-3xl  " >
-        <h3 className='text-[#17213A] text-4xl font-bold mb-3'>Advice App</h3>
-        <p className='font-medium'>Follow these step to master web development</p>
-        <div className="flex my-8 items-baseline w-[400px]  text-center">
+          <div className=" w-[400px]  bg-[#FDFDFD] flex flex-col items-center  p-4 rounded-3xl lg:w-[700px] lg:p-8  md:w-[700px]" >
+        <h3 className='text-[#17213A] text-3xl font-bold mb-[5px]  lg:text-4xl mb-4'>Advice App</h3>
+        <p className='font-medium text-[14px] lg:text-[16px]'>Follow these step to master web development</p>
+        <div className="flex my-4 items-baseline w-[300px]  text-center lg:my-8 md:w-[400px]">
           <div>
             <div className={`border border-[#D1D5DB] rounded-[50%] p-2 text-[#17213A] font-medium ${count>=1&& "bg-[#4F46E5] text-white border-[#4F46E5]"}`}>
               1
@@ -63,15 +63,15 @@ const data=steps[count-1];
             <p className='step text-[#6B7280]'>Step 3</p>
           </div>
         </div>
-        <div className="bg-[#F7F8FC]  flex items-center flex-col p-8 rounded-2xl border border-[#E5E7F0] gap-4">
+        <div className="bg-[#F7F8FC]  flex items-center flex-col p-4 rounded-2xl border border-[#E5E7F0] gap-4">
           <div className=' bg-[#F1F1FC] h-[50px] w-[50px] flex items-center justify-center rounded-[50%] text-[#4A4AD8] text-2xl'><i className={data.icon}></i></div>
-          <div className="text-2xl font-bold text-[#17213A]">{data.title}</div>
-          <div className="text-center px-12 font-medium">{data.description}</div>
-          <div className="flex bg-[#f1f3f8] p-5 rounded-2xl border border-[#E3E3F5]">
+          <div className="text-[18px] font-bold text-[#17213A] md:text-2xl">{data.title}</div>
+          <div className="text-center px-5 font-medium text-[10px]  md:text-[16px] md:px-12">{data.description}</div>
+          <div className="flex bg-[#f1f3f8] p-2 rounded-2xl border border-[#E3E3F5] md:p-5">
             <div className='text-[#4A4AD8] font-bold'><i class="fa-regular fa-lightbulb"></i></div>
-            <div className="px-5">
+            <div className="px-5 ">
               <p className='text-[#4A4AD8] font-bold'>Advice</p>
-              <p className='font-medium'>{data.advice}</p>
+              <p className='font-medium text-[10px] md:text-[16px]'>{data.advice}</p>
             </div>
           </div>
         </div>
