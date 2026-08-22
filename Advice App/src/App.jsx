@@ -38,7 +38,7 @@ const steps = [
 
 const data=steps[count-1];
   return (
-          <div className=" w-[400px]  bg-[#FDFDFD] flex flex-col items-center  p-4 rounded-3xl lg:w-[700px] lg:p-8  md:w-[700px]" >
+          <div className=" w-[330px]  bg-[#FDFDFD] flex flex-col items-center  p-4 rounded-3xl lg:w-[700px] lg:p-8  md:w-[700px]" >
         <h3 className='text-[#17213A] text-3xl font-bold mb-[5px]  lg:text-4xl mb-4'>Advice App</h3>
         <p className='font-medium text-[14px] lg:text-[16px]'>Follow these step to master web development</p>
         <div className="flex my-4 items-baseline w-[300px]  text-center lg:my-8 md:w-[400px]">
@@ -75,11 +75,11 @@ const data=steps[count-1];
             </div>
           </div>
         </div>
-        <div className="flex gap-20 mt-3">
-          <button className='px-25 py-3 rounded-[8px] text-[#4A4AD8] border border-[#4A4AD8] transition duration-300 flex gap-3.5 font-medium cursor-pointer
-           hover:text-white hover:bg-[#4A4AD8] hover:translate-x-1'  onClick={()=>{count>1?setCount(count-1):setCount(3)}}><span><i class="fa-solid fa-arrow-left-long"></i></span>Previous</button>
-          <button className='px-25 py-3 rounded-[8px] text-[#4A4AD8] border border-[#4A4AD8] 
-          flex gap-3.5 font-medium cursor-pointer  hover:text-white hover:bg-[#4A4AD8] hover:translate-x-1 transition duration-300'onClick={()=>{count!=3?setCount(count+1):setCount(1)}}>Next <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
+        <div className="flex gap-7 mt-3 md:gap-20">
+          <button className='px-7 py-3 rounded-[8px] text-[#4A4AD8] border border-[#4A4AD8] transition duration-300 flex gap-3.5 font-medium cursor-pointer
+           hover:text-white hover:bg-[#4A4AD8] hover:translate-x-1 md:px-25'  onClick={()=>{count>1?setCount(count-1):setCount(3)}}><span><i class="fa-solid fa-arrow-left-long"></i></span>Previous</button>
+          <button className='px-7 py-3 rounded-[8px] text-[#4A4AD8] border border-[#4A4AD8] 
+          flex gap-3.5 font-medium cursor-pointer  hover:text-white hover:bg-[#4A4AD8] hover:translate-x-1 transition duration-300 md:px-25'onClick={()=>{count!=3?setCount(count+1):setCount(1)}}>Next <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
         </div>
       </div>
   )
