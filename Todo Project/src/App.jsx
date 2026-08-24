@@ -17,8 +17,7 @@ if(input.trim()==""){
 if(todos){
   let exit=todos.map((item)=>item.title.includes(input))
   if(exit[0]){
-  return console.log("this item already exit");
-    
+  return console.log("this item already exit");   
   }  
 }
 if(editTodo){
@@ -49,6 +48,9 @@ setInput("")
 delItem.target.parentElement.parentElement.remove()
 
  }
+ let clearHandler=()=>{
+  setTodos([])  
+ }
   return (
     <div className="min-h-screen max-h-auto flex justify-center items-center bg-[linear-gradient(135deg,#153677,#4e085f)] overflow-auto">
       <div className="  w-[500px] bg-white p-5 rounded-2xl  ">
@@ -63,7 +65,7 @@ delItem.target.parentElement.parentElement.remove()
         <ul className='scrollbar-thin overflow-auto h-[auto] py-2.5 min-h-[auto] max-h-[400px] '>
          { todos.map((todo)=><TodoItem editHandler={editHandler} delHandler={delHandler} todo={todo}/>)}
         </ul>
-        <div className="flex justify-center items-center mt-4"> <button className='text-white bg-[#153677] py-3.5 px-11 text-[16px] cursor-pointer border-none rounded-4xl' >Clear All</button></div>
+        <div className="flex justify-center items-center mt-4"> <button className='text-white bg-[#153677] py-3.5 px-11 text-[16px] cursor-pointer border-none rounded-4xl' onClick={clearHandler} >Clear All</button></div>
       </div>
     </div>
 
