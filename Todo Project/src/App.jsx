@@ -2,12 +2,13 @@ import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from './features/todo/todoSlice';
+import { addTodo, clearAll, delTodo, updateTodo } from './features/todo/todoSlice';
 
 function App() {
   const [input,setInput ] = useState("")
   const [editTodo,setEditTodo ] = useState(null)
   let todos=useSelector((state)=>state.todos.todo)
+  
   let dispatch=useDispatch()
  const toastHandler = (message) => {
     return toast(message);
@@ -56,9 +57,35 @@ function App() {
 //  }
 
 
+
+
+let editHandler=(todo)=>{
+  setEditTodo(todo.id)
+  setInput(todo.title)
+}
+let delHandler=(id)=>{
+dispatch(delTodo(id))
+}
+let clearAllHandler=()=>{
+ dispatch(clearAll())
+}
+let updateHandler=()=>{
+  
+    dispatch(updateTodo(
+     { id:editTodo,
+       title:input
+     }
+    ))
+    setInput("")
+    setEditTodo(null)
+
+}
 let addHandler=()=>{
     if (input.trim() == "") {
       return toastHandler("please enter a task!");
+    }
+    if(editTodo!==null){      
+      return updateHandler()
     }
     dispatch(addTodo(
      { title:input,
@@ -68,11 +95,7 @@ let addHandler=()=>{
     toastHandler("task added!");
     setInput("")
 }
-let editHandler=(todo)=>{
-  setEditTodo(todo)
-  setInput(todo.title)
-console.log(todo);
-}
+
   return (
     <div className="min-h-screen max-h-auto flex justify-center items-center bg-[linear-gradient(135deg,#153677,#4e085f)] overflow-auto">
       <div className="  w-[500px] bg-white p-5 rounded-2xl  ">
@@ -85,9 +108,9 @@ console.log(todo);
           <button className='border-none py-4 px-12 bg-[#ff5945] text-white cursor-pointer text-[16px] rounded-[40px]' onClick={addHandler}>{editTodo?"Update":"Add"}</button>
         </div>
         <ul className='scrollbar-thin overflow-auto h-[auto] py-2.5 min-h-[auto] max-h-[400px] '>
-         { todos.map((todo)=><TodoItem todo={todo} key={todo.id} editHandler={editHandler}/>)}
+         { todos.map((todo)=><TodoItem todo={todo} key={todo.id} editHandler={editHandler} delHandler={delHandler}/>)}
         </ul>
-        <div className="flex justify-center items-center mt-4"> <button className='text-white bg-[#153677] py-3.5 px-11 text-[16px] cursor-pointer border-none rounded-4xl'  >Clear All</button></div>
+        <div className="flex justify-center items-center mt-4"> <button className='text-white bg-[#153677] py-3.5 px-11 text-[16px] cursor-pointer border-none rounded-4xl' onClick={clearAllHandler}  >Clear All</button></div>
       </div>
        <ToastContainer />
     </div>
@@ -104,7 +127,7 @@ const TodoItem=({todo,editHandler,delHandler})=>{
             {todo.title}
             <div className="cursor-pointer flex gap-[10px]">
               <i className="fa-solid fa-pencil text-gray-600" onClick={()=>editHandler(todo)} ></i>
-              <i className="fa-regular fa-trash-can text-red-500" ></i>
+              <i className="fa-regular fa-trash-can text-red-500" onClick={()=>delHandler(todo.id)} ></i>
             </div>
           </li>
         )
