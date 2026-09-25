@@ -7,7 +7,7 @@ import { addTodo, clearAll, delTodo, updateTodo } from './features/todo/todoSlic
 function App() {
   const [input,setInput ] = useState("")
   const [editTodo,setEditTodo ] = useState(null)
-  let todos=useSelector((state)=>state.todos.todo)
+  let todos=useSelector((state)=>state.todo.todo)
   
   let dispatch=useDispatch()
  const toastHandler = (message) => {
